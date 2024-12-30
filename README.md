@@ -21,11 +21,11 @@
 |----------|-------------|-------------|--------------|
 | Semester | Course Code | Course Name | Credit Hours |
 | **First Semester** ||||
-|| SE201 | Software Development and Maintenance <br>   صيانة وتطوير البرمجيات | 3 |
-|| SE204 | Data structure and algorithms <br>  هياكل البيانات والخوارزميات   | 3 |
-|| SE203 | Information security <br>  التعلم الآلي على الأجهزة   | 3 |
+|| SE208 | Software Development and Maintenance <br>   صيانة وتطوير البرمجيات | 3 |
+|| SE209 | Data structure and algorithms <br>  هياكل البيانات والخوارزميات   | 3 |
+|| SE210 | Information security <br>  التعلم الآلي على الأجهزة   | 3 |
 | **Second Semester** ||||
-|| SE204 | Cloud-application Development <br>  تطوير التطبيقات السحابية     | 3 |
-|| SE206 | Software Design and Architecture <br> معمارية البرمجيات وتصميمها   | 3 |
-|| SE207 | Project<br>المشروع البحثي | 3 |
+|| SE211 | Cloud-application Development <br>  تطوير التطبيقات السحابية     | 3 |
+|| SE212 | Software Design and Architecture <br> معمارية البرمجيات وتصميمها   | 3 |
+|| SE213 | Project<br>المشروع البحثي | 3 |
 
