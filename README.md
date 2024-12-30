@@ -8,9 +8,9 @@
 |----------|-------------|-------------|--------------|
 | Semester | Course Code | Course Name | Credit Hours |
 | **First Semester** ||||
-|| SE201 | Principles and Methodologies of Scientific Research<br>أساسيات البحث العلمي ومنهجياته | 3 |
-|| SE202 | Software Quality Assurance<br>تأكيد جودة البرمجيات | 3 |
-|| SE203 | Advanced Topics in Database<br>موضوعات متقدمة في قواعد البيانات | 3 |
+|| SE201 | [Principles and Methodologies of Scientific Research](https://github.com/astral-fate/SE201-Principles-and-Methodologies-of-Scientific-Research)<br>أساسيات البحث العلمي ومنهجياته | 3 |
+|| SE202 | [Software Quality Assurance](https://github.com/astral-fate/SE202-Software-Quality-Assurance)<br>تأكيد جودة البرمجيات | 3 |
+|| SE203 | [Advanced Topics in Database](https://github.com/astral-fate/SE203-Advanced-Topics-in-Database)<br>موضوعات متقدمة في قواعد البيانات | 3 |
 | **Second Semester** ||||
 || SE204 | Advanced Topics in Information Systems<br>موضوعات متقدمة في نظم المعلومات | 3 |
 || SE205 | Information Security<br>أمن المعلومات | 3 |
