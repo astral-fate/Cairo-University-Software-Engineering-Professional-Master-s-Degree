@@ -23,7 +23,7 @@
 | **First Semester** ||||
 || SE208 | Software Development and Maintenance <br>   صيانة وتطوير البرمجيات | 3 |
 || SE209 | Data structure and algorithms <br>  هياكل البيانات والخوارزميات   | 3 |
-|| SE210 | Information security <br>  التعلم الآلي على الأجهزة   | 3 |
+|| SE210 | Machine Learning <br>  التعلم الآلي على الأجهزة   | 3 |
 | **Second Semester** ||||
 || SE211 | Cloud-application Development <br>  تطوير التطبيقات السحابية     | 3 |
 || SE212 | Software Design and Architecture <br> معمارية البرمجيات وتصميمها   | 3 |
