@@ -82,7 +82,18 @@ Upon completion, students will be able to:
 - Language of Instruction: Bilingual (English/Arabic)
 
 </details>
+<details>
+<summary>📊 Grading System</summary>
+For all courses:
 
+- Midterm Work (أعمال نصف السنة): 60%
+
+    - Includes: Assignments, Quizzes, Projects, and Midterm Exams
+
+
+- Final Examination (الامتحان النهائي): 40%
+
+</details>
 <details>
 <summary>📚 First Year Courses</summary>
 
