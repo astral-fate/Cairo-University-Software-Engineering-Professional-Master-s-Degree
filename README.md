@@ -180,3 +180,7 @@ Faculty of Graduate Studies for Statistical Research (FGSSR) SIS platform can be
 - Password is National ID
 
 # Student's Email
+
+# Student's Hand Book
+
+For more detailes the Student's hand book can bw accsed [here](https://acrobat.adobe.com/id/urn:aaid:sc:EU:63e3be8c-c41a-48ab-a331-ee4e025da02d)
