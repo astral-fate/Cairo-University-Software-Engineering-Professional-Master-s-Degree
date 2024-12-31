@@ -42,7 +42,7 @@ The program focuses on developing practical and applied skills in software engin
 |------------|-------------|-------------|------------|-------------|-------------|
 | Course Code | Course Title | C.H | Course Code | Course Title | C.H |
 | SE101 | Computer Systems Principles and Programming<br>مبادىء نظم الحاسب والبرمجه | 3 | SE106 | Software Project Management<br>إدارة مشروعات البرمجيات | 3 |
-| SE102 | Relational Database Systems<br>نظم قواعد البيانات العلاقية | 3 | SE107 | Web Design and Architecture<br>تصميم مواقع الويب | 3 |
+| SE102 | [Relational Database Systems](https://github.com/astral-fate/SE102-Relational-Database-Systems)<br>نظم قواعد البيانات العلاقية | 3 | SE107 | Web Design and Architecture<br>تصميم مواقع الويب | 3 |
 | SE103 | The Software Development Process<br>عملية تطوير البرمجيات | 3 | 8SE10 | Agile Software Development<br>التطوير الرشيق للبرمجيات | 3 |
 | SE104 | The User Interface Design<br>تصميم بينية المستخدم | 3 | SE109 | Programming in the Large<br>البرمجه في الأنظمة الكبيرة | 3 |
 | SE105 | Object-Oriented Software Development using UML<br>تطوير البرمجيات شيئية التوجه باستخدام UML | 3 | SE110 | Project<br>المشروع | 3 |
