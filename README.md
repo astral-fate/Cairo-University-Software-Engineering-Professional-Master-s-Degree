@@ -1,10 +1,39 @@
 # Cairo University Software Engineering Professional Master's Degree
 
+# Overview
+<details>
+the Software Engineering Professional Master's Degree offered by the <b> Faculty of Graduate Studies for Statistical Research (FGSSR)</b>  at Cairo University:
+The Software Engineering Master's Program consists of two main phases:
+Phase 1 - Master's Requirements:
+
+Students must complete 21 credit hours of coursework spread across two academic semesters
+Maximum period to complete requirements is four academic semesters
+
+- Phase 2 - The student can choose between two tracks:
+    - Track 1: Research Track
+
+    - Student registers for a professional master's thesis research project after completing Phase 1
+    - Research must be in one of the applied fields
+    - Thesis discussion cannot be held before two academic semesters after completing Phase 1
+    - Maximum period for thesis preparation is four academic semesters from registration date
+    - The college council may extend this period by up to two additional semesters based on recommendation from the professional studies committee
+
+- Track 2: Coursework Track
+
+  - Student takes 21 credit hours spread over two academic semesters
+  - Includes 15 credit hours of courses plus 6 credit hours for graduation project
+  - Maximum period to complete this track is four academic semesters
+
+The program focuses on developing practical and applied skills in software engineering through both coursework and research opportunities. It aims to prepare graduates with advanced knowledge and capabilities in software development, design, and engineering principles.
+
+</details>
+
 # Prerequisites
 
+## 1. Academic qualifications
 - Bachelor's degree in ITC or Equivalent field
 -  For non-ITC majors, the pre-master Software Engineering Diploma Program is requried
-## Pre-master Software Engineering Diploma Program
+### Pre-master Software Engineering Diploma Program
 
 <details>
 <summary>📚 First Semester (15 CHs) | Second Semester (15 CHs)</summary>
@@ -68,6 +97,11 @@ Upon completion, students will be able to:
 
 </details>
 
+## 2. Screening interview with the university's committee
+
+## 3. Regestrations, interview, and courses fees
+
+
 # 🎓 Graduate Program Course Structure
 
 
@@ -97,13 +131,16 @@ For all courses:
 <details>
 <summary>📚 First Year Courses</summary>
 
+
 | First Semester (9 CHs) ||| Second Semester (12 CHs) |||
 |------------|-------------|-------------|------------|-------------|-------------|
 | Course Code | Course Title | C.H | Course Code | Course Title | C.H |
-| SE201 | Principles and Methodologies of Scientific Research<br>أساسيات البحث العلمي ومنهجياته | 3 | SE204 | Advanced Topics in Information Systems<br>موضوعات متقدمة في نظم المعلومات | 3 |
-| SE202 | Software Quality Assurance<br>تأكيد جودة البرمجيات | 3 | SE205 | Information Security<br>أمن المعلومات | 3 |
-| SE203 | Advanced Topics in Database<br>موضوعات متقدمة في قواعد البيانات | 3 | SE206 | Advanced Agile Software Development<br>التطوير الرشيق للبرمجيات متقدم | 3 |
+| SE201 | [Principles and Methodologies of Scientific Research](https://github.com/astral-fate/SE201-Principles-and-Methodologies-of-Scientific-Research)<br>أساسيات البحث العلمي ومنهجياته | 3 | SE204 | Advanced Topics in Information Systems<br>موضوعات متقدمة في نظم المعلومات | 3 |
+| SE202 | [Software Quality Assurance](https://github.com/astral-fate/SE202-Software-Quality-Assurance)<br>تأكيد جودة البرمجيات | 3 | SE205 | Information Security<br>أمن المعلومات | 3 |
+| SE203 | [Advanced Topics in Database](https://github.com/astral-fate/SE203-Advanced-Topics-in-Database)<br>موضوعات متقدمة في قواعد البيانات | 3 | SE206 | Advanced Agile Software Development<br>التطوير الرشيق للبرمجيات متقدم | 3 |
 |||| SE207 | Project<br>المشروع | 3 |
+
+Would you like me to integrate this into the full structured document with all the dropdowns we created earlier?
 
 </details>
 
@@ -134,3 +171,12 @@ Graduates will be able to:
 - Lead software development projects
 
 </details>
+
+# Student information system (SIS)
+
+Faculty of Graduate Studies for Statistical Research (FGSSR) SIS platform can be accses [here](https://csds.cu.edu.eg/)
+- Username is University ID
+
+- Password is National ID
+
+# Student's Email
