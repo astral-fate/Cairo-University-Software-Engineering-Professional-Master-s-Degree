@@ -130,7 +130,7 @@ For all courses:
 </details>
 
 <details>
-<summary> Passing Criteria <summary/>
+<summary> Passing Criteria </summary>
 
 In order to pass the course, the student should receive at least 20 out of 40 in the final exam.
 
@@ -139,7 +139,9 @@ In order to pass the course, the student should receive at least 20 out of 40 in
 
 
 
-<details/>
+</details>
+
+
 <details>
 <summary>📚 First Year Courses</summary>
 
