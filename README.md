@@ -130,9 +130,9 @@ For all courses:
 </details>
 
 <details>
-<summary> Passing Criteria </summary>
+<summary> 📑 Passing Criteria </summary>
 
-In order to pass the course, the student should receive at least 20 out of 40 in the final exam.
+In order to pass the course, the student should receive at least 50 grade out of 100, and 20 out of 40 in the final exam, with addition to: 
 
 - Minimum grade of 30 out of 60 in Midterm work
 - Minimum grade of 20 out of 40 in final exam
