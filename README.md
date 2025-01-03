@@ -128,6 +128,18 @@ For all courses:
 - Final Examination (الامتحان النهائي): 40%
 
 </details>
+
+<details>
+<summary> Passing Criteria <summary/>
+
+In order to pass the course, the student should receive at least 20 out of 40 in the final exam.
+
+- Minimum grade of 30 out of 60 in Midterm work
+- Minimum grade of 20 out of 40 in final exam
+
+
+
+<details/>
 <details>
 <summary>📚 First Year Courses</summary>
 
