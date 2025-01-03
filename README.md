@@ -2,6 +2,7 @@
 
 # Overview
 <details>
+<summary> Overview </summary>
 the Software Engineering Professional Master's Degree offered by the <b> Faculty of Graduate Studies for Statistical Research (FGSSR)</b>  at Cairo University:
 The Software Engineering Master's Program consists of two main phases:
 Phase 1 - Master's Requirements:
