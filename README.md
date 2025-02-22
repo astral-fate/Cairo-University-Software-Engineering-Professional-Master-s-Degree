@@ -150,8 +150,8 @@ In order to pass the course, the student should receive at least 50 grade out of
 | First Semester (9 CHs) ||| Second Semester (12 CHs) |||
 |------------|-------------|-------------|------------|-------------|-------------|
 | Course Code | Course Title | C.H | Course Code | Course Title | C.H |
-| SE201 | [Principles and Methodologies of Scientific Research](https://github.com/astral-fate/SE201-Principles-and-Methodologies-of-Scientific-Research)<br>أساسيات البحث العلمي ومنهجياته | 3 | SE204 | Advanced Topics in Information Systems<br>موضوعات متقدمة في نظم المعلومات | 3 |
-| SE202 | [Software Quality Assurance](https://github.com/astral-fate/SE202-Software-Quality-Assurance)<br>تأكيد جودة البرمجيات | 3 | SE205 | Information Security<br>أمن المعلومات | 3 |
+| SE201 | [Principles and Methodologies of Scientific Research](https://github.com/astral-fate/SE201-Principles-and-Methodologies-of-Scientific-Research)<br>أساسيات البحث العلمي ومنهجياته | 3 | SE204 | [Advanced Topics in Information Systems](https://github.com/astral-fate/SE204-Advanced-Topics-in-Information-Systems)<br>موضوعات متقدمة في نظم المعلومات | 3 |
+| SE202 | [Software Quality Assurance](https://github.com/astral-fate/SE202-Software-Quality-Assurance)<br>تأكيد جودة البرمجيات | 3 | SE205 | [Information Security](https://github.com/astral-fate/SE205-Information-Security)<br>أمن المعلومات | 3 |
 | SE203 | [Advanced Topics in Database](https://github.com/astral-fate/SE203-Advanced-Topics-in-Database)<br>موضوعات متقدمة في قواعد البيانات | 3 | SE206 | Advanced Agile Software Development<br>التطوير الرشيق للبرمجيات متقدم | 3 |
 |||| SE207 | Project<br>المشروع | 3 |
 
