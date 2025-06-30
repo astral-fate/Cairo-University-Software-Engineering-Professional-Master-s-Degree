@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>برامج جامعة القاهرة الأكاديمية</title>
+  <title>كلية الدراسات العليا للبحوث الإحصائية</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Custom Variables from index.html for consistency */
+    /* Custom Variables */
     :root {
       --primary-color: #0D1D4E; /* Dark Blue */
       --secondary-color: #433AC8; /* Royal Purple */
@@ -26,7 +26,7 @@
       overflow-x: hidden;
       line-height: 1.7;
       color: #333;
-      background-color: #fdfdff;
+      background-color: var(--light-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -39,22 +39,25 @@
       color: #555;
     }
     
+    /* Global Section Styling */
     section {
-      padding: 4rem 0;
+      padding: 5rem 0;
       position: relative;
     }
 
     .section-header {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
       text-align: center;
     }
 
     .section-title {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 700;
+      color: var(--primary-color);
       position: relative;
       display: inline-block;
       padding-bottom: 0.8rem;
+      margin-bottom: 1rem;
     }
 
     .section-title::after {
@@ -63,13 +66,73 @@
       bottom: 0;
       right: 50%;
       transform: translateX(50%);
-      width: 70px;
+      width: 80px;
       height: 4px;
       background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
       border-radius: 2px;
     }
 
-    /* Navbar Styles (Unified) */
+    .section-header p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-header.text-start {
+      text-align: right !important; /* Force alignment to the right for section headers */
+      width: 100%; /* Ensure the header takes the full width of its column */
+    }
+
+    .section-header.text-start .section-title::after {
+      right: 0;
+      transform: none;
+    }
+
+    .section-header.text-start p {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+      text-transform: capitalize;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      color: white;
+      box-shadow: var(--box-shadow-sm);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--box-shadow-md);
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      color: white;
+    }
+
+    .btn-outline-primary {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      background-color: transparent;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: var(--box-shadow-sm);
+    }
+
+    /* Navbar Styles */
     .navbar {
       background-color: var(--primary-color);
       box-shadow: var(--box-shadow-md);
@@ -114,47 +177,12 @@
     .nav-link:hover::after, .nav-link.active::after {
       width: 60%;
     }
-
-    /* Buttons (Unified) */
-    .btn {
-      padding: 0.8rem 1.8rem;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: var(--transition);
-      text-transform: capitalize;
-    }
-    
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      border: none;
-      color: white;
-      box-shadow: var(--box-shadow-sm);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--box-shadow-md);
-      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-      color: white;
-    }
-
-    .btn-outline-primary {
-        color: var(--primary-color);
-        border-color: var(--primary-color);
-        background-color: transparent;
-    }
-
-    .btn-outline-primary:hover {
-        background-color: var(--primary-color);
-        color: white;
-        transform: translateY(-3px);
-        box-shadow: var(--box-shadow-sm);
-    }
     
     .btn-login {
       background-color: transparent;
       border: 2px solid white;
       color: white !important;
+      transition: var(--transition);
     }
     
     .btn-login:hover {
@@ -162,168 +190,207 @@
       color: var(--primary-color) !important;
     }
 
-    /* Header Section */
-    .header-section {
-      background: linear-gradient(135deg, rgba(13, 29, 78, 0.9), rgba(67, 58, 200, 0.9));
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(13, 29, 78, 0.85), rgba(67, 58, 200, 0.85)), url('https://placehold.co/1920x1080/0D1D4E/ffffff?text=University+Campus') center center / cover no-repeat;
       color: white;
-      padding: 4rem 0;
+      padding: 8rem 0;
       position: relative;
       overflow: hidden;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      min-height: 70vh;
     }
-
-    .header-section .section-title {
-        color: white;
-    }
-
-    .header-section .section-title::after {
-        background: white;
-    }
-
-    .header-section p {
-        color: rgba(255, 255, 255, 0.9);
-    }
-
-    /* Program Categories */
-    .category-card {
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
-      box-shadow: var(--box-shadow-sm);
-      transition: var(--transition);
-      border: none;
-      position: relative;
-      margin-bottom: 1.5rem;
-      height: 100%;
-    }
-
-    .category-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--box-shadow-md);
-    }
-
-    .category-img {
-      height: 250px;
-      object-fit: cover;
-    }
-
-    .category-overlay {
+    
+    .hero-section::before {
+      content: '';
       position: absolute;
       top: 0;
       right: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to top, rgba(13, 29, 78, 0.9) 0%, rgba(0,0,0,0.1) 100%);
+      background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      color: white;
+    } 
+    
+    .hero-content p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-buttons .btn {
+      margin: 0.5rem;
+    }
+    
+    /* Statistics Section */
+    .statistics-section {
+      background-color: #ffffff;
+    }
+    
+    .statistics-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-radius: var(--border-radius-lg);
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      transition: var(--transition);
+      height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.5rem;
-      color: white;
-    }
-
-    .category-content h4 {
-        color: white;
-        font-weight: 600;
-    }
-    
-    .category-content p {
-        color: rgba(255,255,255,0.8);
-        font-size: 0.9rem;
-    }
-
-    .category-icon {
-      font-size: 1.5rem;
-      width: 50px;
-      height: 50px;
-      background-color: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      margin-bottom: 1rem;
-      backdrop-filter: blur(5px);
-    }
-    
-    /* New Program UI Styling */
-    .program-tabs .nav-pills .nav-link {
-      color: var(--primary-color);
-      background-color: #e9ecef;
-      margin: 0 0.5rem;
-      border-radius: 50px;
-      padding: 0.75rem 1.5rem;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-
-    .program-tabs .nav-pills .nav-link.active,
-    .program-tabs .nav-pills .nav-link:hover {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      color: white !important;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .programs-container {
-      background-color: white;
-      border-radius: var(--border-radius-lg);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      min-height: 70vh;
-    }
-
-    .program-list-panel {
-      background-color: var(--light-color);
-      border-left: 1px solid #e9ecef;
-      padding: 1.5rem;
-    }
-
-    .program-detail-panel {
-      padding: 2rem;
-    }
-
-    .program-list-item {
-      padding: 0.8rem 1rem;
-      margin-bottom: 0.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
       align-items: center;
-      border: 1px solid transparent;
-    }
-
-    .program-list-item:hover {
-      background-color: #e2e6ea;
-      border-color: #d1d5db;
-    }
-
-    .program-list-item.active {
-      background: var(--primary-color);
-      color: white;
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .program-list-item.active .program-list-item-icon {
-      color: white;
     }
     
-    .program-icon-lg {
-        color: white;
+    .statistics-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-md);
+      background-color: white;
+    }
+    
+    .statistics-card h3 {
+      font-size: 3rem;
+      color: var(--primary-color);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    
+    .statistics-card p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 0;
     }
 
-    .accordion-button:not(.collapsed) {
-      background-color: var(--primary-color);
-      color: white;
+    /* About Faculty Section */
+    .about-faculty-section {
+      background-color: white;
+    }
+    
+    .about-faculty-content {
+      text-align: justify;
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 2rem;
     }
 
-    .accordion-item {
-      margin-bottom: 1rem;
-      border-radius: 8px !important;
+    .about-faculty-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    
+    #facultyCarousel {
+      border-radius: var(--border-radius-lg);
       overflow: hidden;
-      border: 1px solid rgba(0,0,0,.125);
+      box-shadow: var(--box-shadow-md);
+      min-height: 400px;
     }
 
-    .accordion-button:focus {
-      box-shadow: none;
+    #facultyCarousel .carousel-item img {
+      height: 450px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    /* Programs Section */
+    .programs-section {
+      background-color: #f8f9fa;
+    }
+    
+    .program-card {
+      border-radius: var(--border-radius-lg);
+      border: none;
+      box-shadow: var(--box-shadow-sm);
+      transition: var(--transition);
+      overflow: hidden;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background-color: white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .program-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-md);
+    }
+
+    .program-icon {
+      color: var(--secondary-color);
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .program-count {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .program-card h4 {
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    /* Features Section (Services) */
+    .features-section {
+        background-color: white;
+    }
+    .feature-card {
+      border-radius: var(--border-radius-lg);
+      border: none;
+      box-shadow: var(--box-shadow-sm);
+      transition: var(--transition);
+      overflow: hidden;
+      height: 100%;
+      background-color: white;
+      padding: 1rem;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-md);
+    }
+    
+    .feature-icon {
+      color: var(--accent-color);
+      transition: var(--transition);
+      font-size: 3.5rem;
+    }
+    
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .feature-card .card-title {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      font-weight: 700;
     }
 
     /* Footer */
@@ -368,9 +435,23 @@
       transform: translateX(5px);
     }
     
+    .footer .fab {
+      font-size: 1.6rem;
+      color: #b0c4de;
+      transition: var(--transition);
+    }
+
+    .footer .fab:hover {
+      color: white;
+      transform: translateY(-3px) scale(1.1);
+    }
     .footer .social-icons a {
         margin-left: 1rem;
     }
+    .footer .social-icons a:last-child {
+        margin-left: 0;
+    }
+
 
     .copyright {
       border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -381,7 +462,7 @@
     }
     
     /* Responsive Adjustments */
-    @media (max-width: 991.98px) {
+    @media (max-width: 992px) {
       .navbar-collapse {
         background-color: #0b1a44;
         padding: 1.5rem;
@@ -389,35 +470,91 @@
         border-radius: var(--border-radius-lg);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
-      .navbar-nav .nav-item {
-          margin-bottom: 0.5rem;
+      .navbar-nav {
+        margin-bottom: 1rem;
+      }
+      .navbar-nav .nav-link {
+          padding: 0.8rem 0 !important;
       }
       .navbar .d-flex {
         flex-direction: column;
         align-items: stretch !important;
       }
-       .navbar .btn {
+      .navbar .btn {
         width: 100%;
         margin-top: 0.5rem;
       }
-      .program-list-panel {
-        border-bottom: 1px solid #e9ecef;
-        border-left: none;
+      .navbar .btn-login {
+          margin-right: 0 !important;
       }
-      .footer .col-lg-3, .footer .col-lg-4 {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      #facultyCarousel {
+        margin-top: 3rem;
+      }
+      .footer .col-lg-3 {
         margin-bottom: 2.5rem;
       }
     }
     
-    @media (max-width: 767.98px) {
+    @media (max-width: 768px) {
       section {
-        padding: 3rem 0;
+        padding: 4rem 0;
       }
-      .header-section {
-        padding: 3rem 0;
+      .hero-section {
+        padding: 6rem 0;
+        min-height: auto;
+        text-align: center;
       }
-      .header-content h1 {
-          font-size: 2.5rem;
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      .hero-buttons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      .hero-buttons .btn {
+        width: 80%;
+        max-width: 300px;
+        margin: 0.5rem 0;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .statistics-card h3 {
+        font-size: 2.5rem;
+      }
+      .about-faculty-content {
+          text-align: right;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      body {
+          font-size: 15px;
+      }
+      section {
+          padding: 3rem 0;
+      }
+      .hero-section {
+        padding: 5rem 0;
+      }
+      .hero-content h1 {
+        font-size: 2.1rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
       }
       .footer {
           text-align: center;
@@ -427,15 +564,35 @@
           transform: translateX(50%);
       }
       .footer .social-icons {
-          justify-content: center !important;
+          justify-content: center;
       }
-      .program-tabs .nav-pills .nav-link {
-          margin-bottom: 0.5rem;
+      .footer a:hover {
+          transform: none;
       }
     }
   </style>
-
 </head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#main">بوابة جامعة القاهرة</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">البرامج</a></li>
+  
+        </ul>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-login ms-2" onclick="window.location.href='master_swe.html'">تفاصيل الدرحة العلمية</button>
+          <button class="btn btn-primary" onclick="window.location.href='facutly.html'">أعضاء هيئة التدريس</button>
+        </div>
+      </div>
+    </div>
+  </nav>
 <body>
   <!-- Navigation (Unified) -->
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
