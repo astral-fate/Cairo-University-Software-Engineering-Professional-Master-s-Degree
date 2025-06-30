@@ -1,190 +1,819 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فهرس مقررات ماجستير هندسة البرمجيات</title>
-    <!-- Remove the link tag -->
-    <!-- <link rel="stylesheet" href="style_ar.css"> -->
-    <!-- Add the style block -->
-    <style>
-        body {
-            font-family: 'Tahoma', 'Arial', sans-serif; /* Common Arabic fonts */
-            line-height: 1.7; /* Adjusted for Arabic readability */
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            direction: rtl; /* Right-to-left direction */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كلية الدراسات العليا للبحوث الإحصائية</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom Variables */
+    :root {
+      --primary-color: #0D1D4E; /* Dark Blue */
+      --secondary-color: #433AC8; /* Royal Purple */
+      --accent-color: #433AC8; /* Accent color for highlights */
+      --dark-color: #1a1a1a;
+      --light-color: #f8f9fa;
+      --transition: all 0.4s ease-in-out;
+      --border-radius-lg: 1rem;
+      --box-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --box-shadow-md: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    body {
+      font-family: 'Cairo', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+      color: #333;
+      background-color: var(--light-color);
+    }
 
-        .container {
-            width: 85%; /* Slightly wider for potentially longer Arabic text */
-            max-width: 1300px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 25px 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      color: var(--primary-color);
+      line-height: 1.3;
+    }
 
-        h1 {
-            text-align: center;
-            color: #0056b3; /* Cairo Uni Blue */
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
+    p {
+      color: #555;
+    }
+    
+    /* Global Section Styling */
+    section {
+      padding: 5rem 0;
+      position: relative;
+    }
 
-        h2 {
-            color: #007bff; /* Lighter Blue */
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            text-align: right; /* Align headings to the right */
-        }
+    .section-header {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            font-size: 0.95em; /* Slightly larger default font size */
-        }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.8rem;
+      margin-bottom: 1rem;
+    }
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px 12px;
-            text-align: right; /* Right align text in cells */
-            vertical-align: top;
-        }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+      border-radius: 2px;
+    }
 
-        th {
-            background-color: #e9ecef;
-            font-weight: bold;
-            color: #495057;
-        }
+    .section-header p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-        tbody tr:nth-child(odd) {
-            background-color: #f8f9fa;
-        }
+    .section-header.text-start {
+      text-align: right !important; /* Force alignment to the right for section headers */
+      width: 100%; /* Ensure the header takes the full width of its column */
+    }
 
-        tbody tr:hover {
-            background-color: #e2e6ea;
-        }
+    .section-header.text-start .section-title::after {
+      right: 0;
+      transform: none;
+    }
 
-        a {
-            color: #0056b3;
-            text-decoration: none;
-        }
+    .section-header.text-start p {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    /* Buttons */
+    .btn {
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+      text-transform: capitalize;
+    }
 
-        /* Adjust column widths for SE courses table */
-        th:nth-child(1), td:nth-child(1) { width: 10%; } /* Course Code */
-        th:nth-child(2), td:nth-child(2) { width: 45%; } /* Course Title */
-        th:nth-child(3), td:nth-child(3) { width: 15%; text-align: center; } /* C.H */
-        th:nth-child(4), td:nth-child(4) { width: 15%; text-align: center; } /* Semester */
-        th:nth-child(5), td:nth-child(5) { width: 15%; } /* Notes / Link */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      color: white;
+      box-shadow: var(--box-shadow-sm);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--box-shadow-md);
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      color: white;
+    }
+
+    .btn-outline-primary {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      background-color: transparent;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: var(--box-shadow-sm);
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: var(--primary-color);
+      box-shadow: var(--box-shadow-md);
+      padding: 0.8rem 1rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white !important;
+    }
+    
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .nav-link {
+      color: white !important;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      position: relative;
+      padding: 0.6rem 1rem !important;
+      border-radius: 8px;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+      background-color: white;
+      transition: var(--transition);
+    }
+    
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 60%;
+    }
+    
+    .btn-login {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white !important;
+      transition: var(--transition);
+    }
+    
+    .btn-login:hover {
+      background-color: white;
+      color: var(--primary-color) !important;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(13, 29, 78, 0.85), rgba(67, 58, 200, 0.85)), url('https://placehold.co/1920x1080/0D1D4E/ffffff?text=University+Campus') center center / cover no-repeat;
+      color: white;
+      padding: 8rem 0;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      min-height: 70vh;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      color: white;
+    } 
+    
+    .hero-content p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-buttons .btn {
+      margin: 0.5rem;
+    }
+    
+    /* Statistics Section */
+    .statistics-section {
+      background-color: #ffffff;
+    }
+    
+    .statistics-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-radius: var(--border-radius-lg);
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .statistics-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-md);
+      background-color: white;
+    }
+    
+    .statistics-card h3 {
+      font-size: 3rem;
+      color: var(--primary-color);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    
+    .statistics-card p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 0;
+    }
+
+    /* About Faculty Section */
+    .about-faculty-section {
+      background-color: white;
+    }
+    
+    .about-faculty-content {
+      text-align: justify;
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+
+    .about-faculty-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    
+    #facultyCarousel {
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--box-shadow-md);
+      min-height: 400px;
+    }
+
+    #facultyCarousel .carousel-item img {
+      height: 450px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    /* Programs Section */
+    .programs-section {
+      background-color: #f8f9fa;
+    }
+    
+    .program-card {
+      border-radius: var(--border-radius-lg);
+      border: none;
+      box-shadow: var(--box-shadow-sm);
+      transition: var(--transition);
+      overflow: hidden;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background-color: white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .program-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-md);
+    }
+
+    .program-icon {
+      color: var(--secondary-color);
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .program-count {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .program-card h4 {
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    /* Features Section (Services) */
+    .features-section {
+        background-color: white;
+    }
+    .feature-card {
+      border-radius: var(--border-radius-lg);
+      border: none;
+      box-shadow: var(--box-shadow-sm);
+      transition: var(--transition);
+      overflow: hidden;
+      height: 100%;
+      background-color: white;
+      padding: 1rem;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-md);
+    }
+    
+    .feature-icon {
+      color: var(--accent-color);
+      transition: var(--transition);
+      font-size: 3.5rem;
+    }
+    
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .feature-card .card-title {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 5rem 0 2rem;
+      border-top: 5px solid var(--secondary-color);
+    }
+    
+    .footer h5 {
+      position: relative;
+      padding-bottom: 1rem;
+      margin-bottom: 1.8rem;
+      font-weight: 700;
+      color: white;
+      font-size: 1.3rem;
+    }
+    
+    .footer h5::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+      bottom: 0;
+      right: 0;
+      border-radius: 2px;
+    }
+    
+    .footer a {
+      color: #b0c4de;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+    }
+    
+    .footer a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+    
+    .footer .fab {
+      font-size: 1.6rem;
+      color: #b0c4de;
+      transition: var(--transition);
+    }
+
+    .footer .fab:hover {
+      color: white;
+      transform: translateY(-3px) scale(1.1);
+    }
+    .footer .social-icons a {
+        margin-left: 1rem;
+    }
+    .footer .social-icons a:last-child {
+        margin-left: 0;
+    }
 
 
-        ul {
-            list-style-type: disc;
-            padding-right: 20px; /* Padding on the right for RTL */
-            padding-left: 0;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-        li {
-             margin-bottom: 5px;
-             text-align: right; /* Ensure list items are right-aligned */
-        }
-
-        strong {
-            color: #28a745; /* Green */
-        }
-
-        .course-desc {
-            text-align: center; /* Center description */
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            color: #555;
-        }
-    </style>
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 1.8rem;
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .navbar-collapse {
+        background-color: #0b1a44;
+        padding: 1.5rem;
+        margin-top: 0.5rem;
+        border-radius: var(--border-radius-lg);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      .navbar-nav {
+        margin-bottom: 1rem;
+      }
+      .navbar-nav .nav-link {
+          padding: 0.8rem 0 !important;
+      }
+      .navbar .d-flex {
+        flex-direction: column;
+        align-items: stretch !important;
+      }
+      .navbar .btn {
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+      .navbar .btn-login {
+          margin-right: 0 !important;
+      }
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      #facultyCarousel {
+        margin-top: 3rem;
+      }
+      .footer .col-lg-3 {
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      section {
+        padding: 4rem 0;
+      }
+      .hero-section {
+        padding: 6rem 0;
+        min-height: auto;
+        text-align: center;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      .hero-buttons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      .hero-buttons .btn {
+        width: 80%;
+        max-width: 300px;
+        margin: 0.5rem 0;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .statistics-card h3 {
+        font-size: 2.5rem;
+      }
+      .about-faculty-content {
+          text-align: right;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      body {
+          font-size: 15px;
+      }
+      section {
+          padding: 3rem 0;
+      }
+      .hero-section {
+        padding: 5rem 0;
+      }
+      .hero-content h1 {
+        font-size: 2.1rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .footer {
+          text-align: center;
+      }
+      .footer h5::after {
+          right: 50%;
+          transform: translateX(50%);
+      }
+      .footer .social-icons {
+          justify-content: center;
+      }
+      .footer a:hover {
+          transform: none;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <h1>فهرس المقررات</h1>
-        <p class="course-desc">
-            هذه الصفحة توفر قائمة بمقررات السنة الأولى لبرنامج ماجستير هندسة البرمجيات بجامعة القاهرة، مع روابط للمواد المتاحة.
-        </p>
-
-        <h2>مقررات السنة الأولى</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>رمز المقرر</th>
-                    <th>اسم المقرر</th>
-                    <th>الساعات المعتمدة</th>
-                    <th>الفصل الدراسي</th>
-                    <th>ملاحظات / رابط</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>SE201</td>
-                    <td>Principles and Methodologies of Scientific Research<br>أساسيات البحث العلمي ومنهجياته</td>
-                    <td>3</td>
-                    <td>الأول</td>
-                    <td><a href="https://github.com/astral-fate/SE201-Principles-and-Methodologies-of-Scientific-Research" target="_blank">مستودع المقرر</a></td>
-                </tr>
-                <tr>
-                    <td>SE202</td>
-                    <td>Software Quality Assurance<br>تأكيد جودة البرمجيات</td>
-                    <td>3</td>
-                    <td>الأول</td>
-                    <td><a href="https://github.com/astral-fate/SE202-Software-Quality-Assurance" target="_blank">مستودع المقرر</a></td>
-                </tr>
-                <tr>
-                    <td>SE203</td>
-                    <td>Advanced Topics in Database<br>موضوعات متقدمة في قواعد البيانات</td>
-                    <td>3</td>
-                    <td>الأول</td>
-                    <td><a href="https://github.com/astral-fate/SE203-Advanced-Topics-in-Database" target="_blank">مستودع المقرر</a></td>
-                </tr>
-                <tr>
-                    <td>SE204</td>
-                    <td>Advanced Topics in Information Systems<br>موضوعات متقدمة في نظم المعلومات</td>
-                    <td>3</td>
-                    <td>الثاني</td>
-                    <td><a href="https://astral-fate.github.io/SE204-Advanced-Topics-in-Information-Systems/" target="_blank">صفحة المقرر</a></td>
-                </tr>
-                <tr>
-                    <td>SE205</td>
-                    <td>Information Security<br>أمن المعلومات</td>
-                    <td>3</td>
-                    <td>الثاني</td>
-                    <td><a href="https://astral-fate.github.io/SE205-Information-Security/" target="_blank">صفحة المقرر</a></td>
-                </tr>
-                <tr>
-                    <td>SE206</td>
-                    <td>Advanced Agile Software Development<br>التطوير الرشيق للبرمجيات متقدم</td>
-                    <td>3</td>
-                    <td>الثاني</td>
-                    <td><a href="https://astral-fate.github.io/SE206-Advanced-Agile-Software-Development/" target="_blank">صفحة المقرر</a></td>
-                </tr>
-                <tr>
-                    <td>SE207</td>
-                    <td>Project<br>المشروع</td>
-                    <td>3</td>
-                    <td>الثاني</td>
-                 
-                     <td><a href="https://astral-fate.github.io/Cairo-University-Software-Engineering-Diploma-Program/" target="_blank">صفحة المقرر</a></td>
-                </tr>
-            </tbody>
-        </table>
-
+      <a class="navbar-brand" href="#main">بوابة جامعة القاهرة</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#main">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link" href="#programs">البرامج</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about-faculty">عن الكلية</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">الخدمات</a></li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-login ms-2" onclick="window.location.href='master_swe.html'">تفاصيل الدرحة العلمية</button>
+          <button class="btn btn-primary" onclick="window.location.href='facutly.html'">أعضاء هيئة التدريس</button>
+        </div>
+      </div>
     </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="main">
+    <div class="container">
+      <div class="hero-content">
+        <h1>بوابة جامعة القاهرة للدراسات العليا</h1>
+        <p>البوابة الإلكترونية الرسمية لكلية الدراسات العليا للبحوث الإحصائية - جامعة القاهرة. استكشف برامجنا الأكاديمية والبحثية المتميزة.</p>
+        <div class="hero-buttons">
+        
+          <a href="#programs" class="btn btn-outline-light btn-lg">استكشف البرامج</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="statistics-section" id="statistics">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">إحصائيات الكلية</h2>
+        <p>أرقام تعكس تميزنا الأكاديمي والنمو المستمر في مجالات الإحصاء والبحث العلمي.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-3 col-md-6">
+          <div class="statistics-card">
+            <h3>+100</h3>
+            <p>أعضاء هيئة التدريس</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="statistics-card">
+            <h3>5</h3>
+            <p>برامج الدكتوراه</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="statistics-card">
+            <h3>8</h3>
+            <p>برامج الماجستير</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="statistics-card">
+            <h3>12</h3>
+            <p>برامج الدبلوم</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Faculty Section -->
+  <section class="about-faculty-section" id="about-faculty">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+            <div id="facultyCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://placehold.co/800x450/0D1D4E/ffffff?text=Image+1" class="d-block w-100" alt="صورة للجامعة 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://placehold.co/800x450/433AC8/ffffff?text=Image+2" class="d-block w-100" alt="صورة للجامعة 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://placehold.co/800x450/00C896/ffffff?text=Image+3" class="d-block w-100" alt="صورة للجامعة 3">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#facultyCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">السابق</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#facultyCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">التالي</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="section-header text-start">
+            <h2 class="section-title">عن الكلية</h2>
+          </div>
+          <p class="about-faculty-content">
+            كلية الدراسات العليا للبحوث الإحصائية (FGSSR) هي واحدة من أقدم وأعرق المؤسسات في مصر للتعليم العالي في الإحصاء وعلوم الحاسب والمجالات ذات الصلة. لأكثر من 70 عامًا، كانت الكلية رائدة في التعليم الإحصائي والبحث.
+            تقدم الكلية مجموعة واسعة من البرامج المهنية المصممة لتزويد الطلاب بالمهارات الفنية والخبرة المطلوبة في سوق العمل اليوم. مع أكثر من 18 برنامجًا متخصصًا، تعد الكلية الخريجين للتميز في مجالات مختلفة بما في ذلك علم البيانات، هندسة البرمجيات، إدارة المخاطر، والمزيد.
+          </p>
+          <div class="d-flex gap-3 justify-content-start flex-wrap">
+            <a href="#" class="btn btn-primary">تحميل الكتيب</a>
+            <a href="#" class="btn btn-outline-primary">اتصل بنا</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="programs-section" id="programs">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">البرامج المهنية</h2>
+        <p>استكشف برامجنا المتميزة في الدراسات العليا المصممة لتلبية متطلبات سوق العمل الحديث.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4 col-md-6">
+          <div class="program-card">
+            <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="program-count">12</div>
+            <h4>برامج الدبلوم</h4>
+            <p>برامج دبلوم مهنية ومخصصة للطلاب الراغبين في التخصص.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="program-card">
+            <div class="program-icon"><i class="fas fa-book-reader"></i></div>
+            <div class="program-count">8</div>
+            <h4>برامج الماجستير</h4>
+            <p>برامج ماجستير تركز على البحث والابتكار في مختلف التخصصات.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="program-card">
+            <div class="program-icon"><i class="fas fa-microscope"></i></div>
+            <div class="program-count">5</div>
+            <h4>برامج الدكتوراه</h4>
+            <p>برامج بحثية دكتوراه متقدمة لإعداد قادة المستقبل والباحثين.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section (Services) -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">المعلومات التي تحتاجها</h2>
+        <p>موقع مخصص لمعرفة كافة تفاصيل البرامج التي تقدمها كلية الدراسات العليا للبحوث الإحصائية</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4 col-md-6">
+          <div class="card feature-card h-100">
+            <div class="card-body text-center p-4">
+              <i class="fas fa-file-alt feature-icon mb-4"></i>
+              <h5 class="card-title">طلب الالتحاق الإلكتروني</h5>
+              <p class="card-text">أكمل عملية تقديم طلبك عبر الإنترنت من خلال واجهتنا السهلة الاستخدام.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card feature-card h-100">
+            <div class="card-body text-center p-4">
+              <i class="fas fa-award feature-icon mb-4"></i>
+              <h5 class="card-title">استخراج الشهادة</h5>
+              <p class="card-text">اطلب وتتبع شهاداتك من خلال نظام الشهادات الرقمي الخاص بنا بكل سهولة.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card feature-card h-100">
+            <div class="card-body text-center p-4">
+              <i class="fas fa-comments feature-icon mb-4"></i>
+              <h5 class="card-title">الدعم الفني</h5>
+              <p class="card-text">احصل على المساعدة من خلال نظام التذاكر المخصص لدينا مع أوقات استجابة سريعة.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-12 text-center text-lg-end">
+          <h5>كلية الدراسات العليا للبحوث الإحصائية</h5>
+          <p class="px-lg-0 px-4">نحن نسعى لتطوير البحث والتعليم الإحصائي من خلال برامج مشكلة وأعضاء هيئة تدريس على مستوى عالي من الخبرة والكفاءة.</p>
+          <div class="mt-4 social-icons d-flex justify-content-center justify-content-lg-start">
+            <a href="#" class="ms-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="ms-3"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="ms-3"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="ms-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h5>روابط سريعة</h5>
+          <ul class="list-unstyled">
+            <li><a href="#programs"><i class="fas fa-chevron-right me-2"></i> البرامج</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i> القبول</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i> بوابة الطالب</a></li>
+            <li><a href="#features"><i class="fas fa-chevron-right me-2"></i> الخدمات</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5>الموارد</h5>
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i> الأسئلة الشائعة</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i> دليل الطالب</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i> المكتبة</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5>اتصل بنا</h5>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-map-marker-alt me-2"></i> جامعة القاهرة، الجيزة</li>
+            <li class="mt-2"><i class="fas fa-envelope me-2"></i> <a href="mailto:info@cu.edu.eg">info@cu.edu.eg</a></li>
+            <li class="mt-2"><i class="fas fa-phone me-2"></i> <a href="tel:+20123456789">+20 123 456 789</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center copyright">
+        <p>&copy; 2024 كلية الدراسات العليا للبحوث الإحصائية. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
