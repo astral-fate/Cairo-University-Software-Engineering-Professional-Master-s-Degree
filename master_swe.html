@@ -298,14 +298,20 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#" data-ar="جامعة القاهرة" data-en="Cairo University">جامعة القاهرة</a>
+      <a class="navbar-brand" href="#main">بوابة جامعة القاهرة</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">البرامج</a></li>
+  
         </ul>
-        <button id="lang-toggle-btn" class="btn">English</button>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-login ms-2" onclick="window.location.href='master_swe.html'">تفاصيل الدرحة العلمية</button>
+          <button class="btn btn-primary" onclick="window.location.href='facutly.html'">أعضاء هيئة التدريس</button>
+        </div>
       </div>
     </div>
   </nav>
