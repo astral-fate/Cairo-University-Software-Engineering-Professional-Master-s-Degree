@@ -1,1 +1,558 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أعضاء هيئة التدريس - كلية الدراسات العليا للبحوث الإحصائية</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <style>
+    /* --- Root Variables (from your site) --- */
+    :root {
+      --primary-color: #0D1D4E; /* Dark Blue */
+      --secondary-color: #433AC8; /* Royal Purple */
+      --accent-color: #433AC8; /* Accent color for highlights */
+      --dark-color: #1a1a1a;
+      --light-color: #f8f9fa;
+      --transition: all 0.4s ease-in-out;
+      --border-radius-lg: 1rem;
+      --box-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --box-shadow-md: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* --- General Body and Typography --- */
+    body {
+      font-family: 'Cairo', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+      color: #333;
+      background-color: var(--light-color);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      color: var(--primary-color);
+      line-height: 1.3;
+    }
+
+    p {
+      color: #555;
+    }
+    
+    /* --- Navbar Styles (Consistent with your site) --- */
+    .navbar {
+      background-color: var(--primary-color);
+      box-shadow: var(--box-shadow-md);
+      padding: 0.8rem 1rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white !important;
+    }
+    
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .nav-link {
+      color: white !important;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      position: relative;
+      padding: 0.6rem 1rem !important;
+      border-radius: 8px;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+      background-color: white;
+      transition: var(--transition);
+    }
+    
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 60%;
+    }
+    
+    .btn-login {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white !important;
+      transition: var(--transition);
+    }
+    
+    .btn-login:hover {
+      background-color: white;
+      color: var(--primary-color) !important;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      color: white;
+      box-shadow: var(--box-shadow-sm);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--box-shadow-md);
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      color: white;
+    }
+
+    /* --- Page Header --- */
+    .page-header {
+      background: linear-gradient(rgba(13, 29, 78, 0.85), rgba(67, 58, 200, 0.85)), url('https://placehold.co/1920x1080/0D1D4E/ffffff?text=Faculty') center center / cover no-repeat;
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .page-header h1 {
+      color: white;
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .page-header p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.2rem;
+    }
+
+    /* --- Section Styling --- */
+    section {
+      padding: 5rem 0;
+    }
+    .section-header {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+      border-radius: 2px;
+    }
+
+    /* --- Faculty Card Styling --- */
+    .faculty-card {
+      background-color: #fff;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--box-shadow-sm);
+      transition: var(--transition);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .faculty-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--box-shadow-md);
+    }
+    .faculty-card-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .faculty-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .faculty-card-header h4 {
+      margin-bottom: 0.25rem;
+      font-size: 1.5rem;
+    }
+    .faculty-card-header .title-ar {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #6c757d;
+    }
+    .faculty-card-header p {
+      margin-bottom: 0;
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+
+    .faculty-card-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .faculty-card-body h5 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      border-bottom: 2px solid #e9ecef;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .interest-tags .badge {
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.5em 1em;
+      margin: 0.2rem;
+      background-color: #e2e6ea;
+      color: var(--primary-color);
+      border: 1px solid #d1d5db;
+    }
+    .faculty-links {
+      margin-top: auto; /* Pushes links to the bottom */
+      padding-top: 1rem;
+      text-align: center;
+    }
+    .faculty-links a {
+      color: #6c757d;
+      font-size: 1.6rem;
+      margin: 0 0.75rem;
+      transition: var(--transition);
+    }
+    .faculty-links a:hover {
+      color: var(--secondary-color);
+      transform: scale(1.1);
+    }
+
+    /* --- Footer Styles (Consistent with your site) --- */
+    .footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 5rem 0 2rem;
+      border-top: 5px solid var(--secondary-color);
+    }
+    .footer h5 {
+      position: relative;
+      padding-bottom: 1rem;
+      margin-bottom: 1.8rem;
+      color: white;
+    }
+    .footer h5::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+      bottom: 0;
+      right: 0;
+    }
+    .footer a {
+      color: #b0c4de;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .footer a:hover {
+      color: white;
+    }
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 1.8rem;
+      margin-top: 3rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 992px) {
+        .navbar-collapse {
+            background-color: #0b1a44;
+            padding: 1.5rem;
+            margin-top: 0.5rem;
+            border-radius: var(--border-radius-lg);
+        }
+    }
+    @media (max-width: 768px) {
+        .page-header h1 { font-size: 2.5rem; }
+        section { padding: 3rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">بوابة جامعة القاهرة</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">البرامج</a></li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-login ms-2" onclick="window.location.href='master_swe.html'">تفاصيل الدرجة العلمية</button>
+          <button class="btn btn-primary" onclick="window.location.href='faculty.html'">أعضاء هيئة التدريس</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>أعضاء هيئة التدريس</h1>
+      <p>نخبة من الأساتذة والباحثين المتميزين في مجالاتهم</p>
+    </div>
+  </header>
+
+  <!-- Faculty Section -->
+  <section id="faculty">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Dr. Atef Raslan Card -->
+        <div class="col-lg-6 col-md-12">
+          <div class="faculty-card">
+            <div class="faculty-card-header">
+              <img src="https://placehold.co/150x150/0D1D4E/FFFFFF?text=AR" alt="Dr. Atef Raslan" class="faculty-img">
+              <h4>Dr. Atef Raslan</h4>
+              <p class="title-ar">د. عاطف يحيى عز الدين رسلان</p>
+              <p>أستاذ علوم الحاسب الآلي</p>
+            </div>
+            <div class="faculty-card-body">
+              <h5>الاهتمامات البحثية</h5>
+              <div class="interest-tags">
+                <span class="badge">Software Development</span>
+                <span class="badge">Agile Methodology</span>
+                <span class="badge">Machine Learning</span>
+                <span class="badge">Effort Estimation</span>
+              </div>
+              <div class="faculty-links">
+                <a href="https://www.researchgate.net/profile/Atef-Raslan-2" target="_blank" title="ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+                <a href="https://scholar.google.com/scholar?hl=ar&as_sdt=0%2C5&q=atef+raslan+cairo+university&btnG=" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Nagy Ramadan Darwish Card -->
+        <div class="col-lg-6 col-md-12">
+          <div class="faculty-card">
+            <div class="faculty-card-header">
+              <img src="https://placehold.co/150x150/433AC8/FFFFFF?text=ND" alt="Dr. Nagy Ramadan Darwish" class="faculty-img">
+              <h4>Dr. Nagy Ramadan Darwish</h4>
+              <p class="title-ar">د. ناجي رمضان درويش</p>
+              <p>أستاذ نظم المعلومات</p>
+            </div>
+            <div class="faculty-card-body">
+              <h5>الاهتمامات البحثية</h5>
+              <div class="interest-tags">
+                <span class="badge">E-government</span>
+                <span class="badge">Agile SW Development</span>
+                <span class="badge">Requirements Engineering</span>
+                <span class="badge">SW Engineering</span>
+              </div>
+              <div class="faculty-links">
+                 <a href="https://scholar.cu.edu.eg/?q=nagyrd/publications" target="_blank" title="Personal Website"><i class="fas fa-globe"></i></a>
+                 <a href="https://scholar.google.com.eg/citations?user=xx_ZkAEAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Hesham Ahmed Hefny Card -->
+        <div class="col-lg-6 col-md-12">
+          <div class="faculty-card">
+            <div class="faculty-card-header">
+              <img src="https://placehold.co/150x150/00C896/FFFFFF?text=HH" alt="Dr. Hesham Ahmed Hefny" class="faculty-img">
+              <h4>Dr. Hesham Ahmed Hefny</h4>
+              <p class="title-ar">د. هشام أحمد حنفي</p>
+              <p>أستاذ علوم الحاسب الآلي</p>
+            </div>
+            <div class="faculty-card-body">
+              <h5>الاهتمامات البحثية</h5>
+              <div class="interest-tags">
+                <span class="badge">Computational Intelligence</span>
+                <span class="badge">Decision Making</span>
+                <span class="badge">Data Mining</span>
+              </div>
+              <div class="faculty-links">
+                <a href="https://www.linkedin.com/in/dr-hesham-hefny-04a5632b/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://scholar.google.com/citations?user=ApGLVj4AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+                <a href="https://www.researchgate.net/profile/Hesham-Hefny-2" target="_blank" title="ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prof. Lamiaa Fattouh Ibrahim Card -->
+        <div class="col-lg-6 col-md-12">
+          <div class="faculty-card">
+            <div class="faculty-card-header">
+              <img src="https://placehold.co/150x150/f39c12/FFFFFF?text=LI" alt="Prof. Lamiaa Fattouh Ibrahim" class="faculty-img">
+              <h4>Prof. Lamiaa Fattouh Ibrahim</h4>
+              <p class="title-ar">أ.د. لمياء فتوح إبراهيم</p>
+              <p>أستاذ</p>
+            </div>
+            <div class="faculty-card-body">
+              <h5>الاهتمامات البحثية</h5>
+              <div class="interest-tags">
+                <span class="badge">E-learning</span>
+                <span class="badge">Data Mining</span>
+                <span class="badge">Network Planning</span>
+              </div>
+              <div class="faculty-links">
+                <a href="https://www.linkedin.com/in/prof-lamiaa-fattouh-ibrahim-72a5311a/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://scholar.google.com/citations?user=RQiOktgAAAAJ" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+                <a href="http://scholar.cu.edu.eg/?q=lfattouh/" target="_blank" title="Cairo University Profile"><i class="fas fa-university"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ashraf Shahin Card -->
+        <div class="col-lg-6 col-md-12">
+          <div class="faculty-card">
+            <div class="faculty-card-header">
+              <img src="https://placehold.co/150x150/c0392b/FFFFFF?text=AS" alt="Ashraf Shahin" class="faculty-img">
+              <h4>Ashraf Shahin</h4>
+              <p class="title-ar">اشرف شاهين</p>
+              <p>أستاذ مساعد</p>
+            </div>
+            <div class="faculty-card-body">
+              <h5>الاهتمامات البحثية</h5>
+              <div class="interest-tags">
+                <span class="badge">Cloud Computing</span>
+                <span class="badge">Software Engineering</span>
+              </div>
+              <div class="faculty-links">
+                <a href="https://www.linkedin.com/in/ashraf-shahin-811b20a9?originalSubdomain=eg" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://scholar.google.com/citations?user=rmmqcGEAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+                <a href="https://www.researchgate.net/profile/Ashraf-Shahin-2" target="_blank" title="ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ahmed Hamza Assad Card -->
+        <div class="col-lg-6 col-md-12">
+          <div class="faculty-card">
+            <div class="faculty-card-header">
+              <img src="https://placehold.co/150x150/2980b9/FFFFFF?text=AH" alt="Ahmed Hamza Assad" class="faculty-img">
+              <h4>Ahmed Hamza Assad</h4>
+              <p class="title-ar">احمد حمزة اسعد</p>
+              <p>أستاذ مساعد</p>
+            </div>
+            <div class="faculty-card-body">
+              <h5>الاهتمامات البحثية</h5>
+              <div class="interest-tags">
+                <span class="badge">Machine/Deep Learning</span>
+                <span class="badge">Computer Vision</span>
+                <span class="badge">Computer-Aided Diagnosis</span>
+                <span class="badge">Data Mining/Encoding</span>
+              </div>
+              <div class="faculty-links">
+                <a href="https://scholar.google.com/citations?user=MnclPQ0AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mervat Gheith Card -->
+        <div class="col-lg-6 col-md-12">
+          <div class="faculty-card">
+            <div class="faculty-card-header">
+              <img src="https://placehold.co/150x150/8e44ad/FFFFFF?text=MG" alt="Mervat Gheith" class="faculty-img">
+              <h4>Mervat Gheith</h4>
+              <p class="title-ar">ميرفت غيث</p>
+              <p>أستاذ مساعد</p>
+            </div>
+            <div class="faculty-card-body">
+              <h5>الاهتمامات البحثية</h5>
+              <div class="interest-tags">
+                <span class="badge">NLP</span>
+                <span class="badge">Artificial Intelligence</span>
+              </div>
+              <div class="faculty-links">
+                <a href="https://scholar.google.com/citations?user=zhZQaoYAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+                <a href="https://www.researchgate.net/profile/Mervat-Gheith" target="_blank" title="ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-12 text-center text-lg-end">
+          <h5>كلية الدراسات العليا للبحوث الإحصائية</h5>
+          <p class="px-lg-0 px-4">نسعى لتطوير البحث والتعليم الإحصائي من خلال برامج متميزة وأعضاء هيئة تدريس على مستوى عالٍ من الخبرة والكفاءة.</p>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h5>روابط سريعة</h5>
+          <ul class="list-unstyled">
+            <li><a href="programs.html"><i class="fas fa-chevron-right me-2"></i> البرامج</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i> القبول</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5>الموارد</h5>
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i> دليل الطالب</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i> المكتبة</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5>اتصل بنا</h5>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-map-marker-alt me-2"></i> جامعة القاهرة، الجيزة</li>
+            <li class="mt-2"><i class="fas fa-envelope me-2"></i> <a href="mailto:info@cu.edu.eg">info@cu.edu.eg</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center copyright">
+        <p>&copy; 2024 كلية الدراسات العليا للبحوث الإحصائية. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
