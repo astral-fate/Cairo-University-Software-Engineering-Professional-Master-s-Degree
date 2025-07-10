@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>أبحاث الخريجين - كلية الدراسات العليا للبحوث الإحصائية</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <style>
+    /* --- Root Variables (from your site) --- */
+    :root {
+      --primary-color: #0D1D4E; /* Dark Blue */
+      --secondary-color: #433AC8; /* Royal Purple */
+      --accent-color: #433AC8; /* Accent color for highlights */
+      --dark-color: #1a1a1a;
+      --light-color: #f8f9fa;
+      --transition: all 0.4s ease-in-out;
+      --border-radius-lg: 1rem;
+      --box-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --box-shadow-md: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* --- General Body and Typography --- */
+    body {
+      font-family: 'Cairo', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+      color: #333;
+      background-color: var(--light-color);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      color: var(--primary-color);
+      line-height: 1.3;
+    }
+
+    p {
+      color: #555;
+    }
+    
+    /* --- Navbar Styles (Consistent with your site) --- */
+    .navbar {
+      background-color: var(--primary-color);
+      box-shadow: var(--box-shadow-md);
+      padding: 0.8rem 1rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white !important;
+    }
+    
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .nav-link {
+      color: white !important;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      position: relative;
+      padding: 0.6rem 1rem !important;
+      border-radius: 8px;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+      background-color: white;
+      transition: var(--transition);
+    }
+    
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 60%;
+    }
+    
+    .btn-login {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white !important;
+      transition: var(--transition);
+    }
+    
+    .btn-login:hover {
+      background-color: white;
+      color: var(--primary-color) !important;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      color: white;
+      box-shadow: var(--box-shadow-sm);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--box-shadow-md);
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      color: white;
+    }
+
+    /* --- Page Header --- */
+    .page-header {
+      background: linear-gradient(rgba(13, 29, 78, 0.85), rgba(67, 58, 200, 0.85)), url('https://placehold.co/1920x1080/0D1D4E/ffffff?text=Research') center center / cover no-repeat;
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .page-header h1 {
+      color: white;
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .page-header p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.2rem;
+    }
+
+    /* --- Section Styling --- */
+    section {
+      padding: 5rem 0;
+    }
+    .section-header {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+      border-radius: 2px;
+    }
+
+    /* --- Research Card Styling --- */
+    .research-card {
+      background-color: #fff;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--box-shadow-sm);
+      transition: var(--transition);
+      margin-bottom: 2rem;
+      border: 1px solid #e9ecef;
+    }
+    .research-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--box-shadow-md);
+    }
+    .research-card-header {
+      padding: 1.5rem 2rem;
+      background-color: var(--primary-color);
+      color: white;
+      border-top-left-radius: var(--border-radius-lg);
+      border-top-right-radius: var(--border-radius-lg);
+    }
+    .research-card-header h4 {
+      margin-bottom: 0.25rem;
+      font-size: 1.6rem;
+      color: white;
+    }
+    .research-card-header .year-badge {
+      font-size: 0.9rem;
+      font-weight: 500;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 0.3em 0.8em;
+      border-radius: 50px;
+    }
+
+    .research-card-body {
+      padding: 2rem;
+    }
+    
+    .research-card-body h5 {
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e9ecef;
+    }
+    
+    .author-list, .supervisor-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    .author-list li, .supervisor-list li {
+        margin-bottom: 0.5rem;
+        font-size: 1.05rem;
+    }
+    .author-list li i, .supervisor-list li i {
+        color: var(--secondary-color);
+        margin-left: 8px;
+    }
+    
+    .research-links {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e9ecef;
+      text-align: center;
+    }
+    .research-links a {
+      color: #6c757d;
+      font-size: 1.8rem;
+      margin: 0 1rem;
+      transition: var(--transition);
+      display: inline-block;
+    }
+    .research-links a:hover {
+      color: var(--secondary-color);
+      transform: scale(1.15);
+    }
+
+
+    /* --- Footer Styles (Consistent with your site) --- */
+    .footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 5rem 0 2rem;
+      border-top: 5px solid var(--secondary-color);
+    }
+    .footer h5 {
+      position: relative;
+      padding-bottom: 1rem;
+      margin-bottom: 1.8rem;
+      color: white;
+    }
+    .footer h5::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+      bottom: 0;
+      right: 0;
+    }
+    .footer a {
+      color: #b0c4de;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .footer a:hover {
+      color: white;
+    }
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 1.8rem;
+      margin-top: 3rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 992px) {
+        .navbar-collapse {
+            background-color: #0b1a44;
+            padding: 1.5rem;
+            margin-top: 0.5rem;
+            border-radius: var(--border-radius-lg);
+        }
+    }
+    @media (max-width: 768px) {
+        .page-header h1 { font-size: 2.5rem; }
+        section { padding: 3rem 0; }
+        .research-card-header h4 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">بوابة جامعة القاهرة</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">البرامج</a></li>
+          <li class="nav-item"><a class="nav-link" href="facutly.html">أعضاء هيئة التدريس</a></li>
+          <li class="nav-item"><a class="nav-link active" href="research.html">أبحاث الخريجين</a></li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-login ms-2" onclick="window.location.href='master_swe.html'">تفاصيل الدرجة العلمية</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>أبحاث الخريجين</h1>
+      <p>استعراض الأبحاث والمشاريع المنشورة لطلاب وخريجي برامجنا المتميزة</p>
+    </div>
+  </header>
+
+  <!-- Research Section -->
+  <section id="research">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+
+          <!-- Research Card 1 -->
+          <div class="research-card">
+            <div class="research-card-header">
+              <h4>Predictive Model for Student’s Academic Performance Using Machine Learning Techniques</h4>
+              <span class="year-badge">يوليو 2024</span>
+            </div>
+            <div class="research-card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>الطلاب الباحثون</h5>
+                  <ul class="author-list">
+                    <li><i class="fas fa-user-graduate"></i>Abeer Ali Saeed Amer</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>المشرف</h5>
+                  <ul class="supervisor-list">
+                    <li><i class="fas fa-chalkboard-teacher"></i>Dr. Atef Tayeh Nour El-Din Raslan</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="research-links">
+                <a href="https://www.ijraset.com/best-journal/predictive-model-for-students-academic-performance-using-machine-learning-techniques-755" target="_blank" title="رابط البحث"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Research Card 2 -->
+          <div class="research-card">
+            <div class="research-card-header">
+              <h4>The Future ERP Systems: Improve Employee Performance Evaluation Using Machine Learning</h4>
+              <span class="year-badge">أكتوبر 2024</span>
+            </div>
+            <div class="research-card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>الطلاب الباحثون</h5>
+                  <ul class="author-list">
+                    <li><i class="fas fa-user-graduate"></i>Ahmed Youssri</li>
+                    <li><i class="fas fa-user-graduate"></i>Iman Mosallam</li>
+                    <li><i class="fas fa-user-graduate"></i>Elsayed Abdelbadea</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>المشرف</h5>
+                  <ul class="supervisor-list">
+                    <li><i class="fas fa-chalkboard-teacher"></i>Dr. Atef Tayeh Nour El-Din Raslan</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="research-links">
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-71619-5_2" target="_blank" title="رابط البحث"><i class="fas fa-link"></i></a>
+                <a href="https://www.researchgate.net/profile/Ahmed-Youssri" target="_blank" title="Ahmed Youssri - ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+                <a href="https://www.researchgate.net/profile/Iman-Mosallam" target="_blank" title="Iman Mosallam - ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+                <a href="https://www.linkedin.com/in/elsayed-abdelbadea-0434442b/" target="_blank" title="Elsayed Abdelbadea - LinkedIn"><i class="fab fa-linkedin"></i></a>
+                 <a href="https://www.researchgate.net/profile/Elsayed-Abdelbadea" target="_blank" title="Elsayed Abdelbadea - ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-12 text-center text-lg-end">
+          <h5>كلية الدراسات العليا للبحوث الإحصائية</h5>
+          <p class="px-lg-0 px-4">نسعى لتطوير البحث والتعليم الإحصائي من خلال برامج متميزة وأعضاء هيئة تدريس على مستوى عالٍ من الخبرة والكفاءة.</p>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h5>روابط سريعة</h5>
+          <ul class="list-unstyled">
+            <li><a href="programs.html"><i class="fas fa-chevron-right me-2"></i> البرامج</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i> القبول</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5>الموارد</h5>
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i> دليل الطالب</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i> المكتبة</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5>اتصل بنا</h5>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-map-marker-alt me-2"></i> جامعة القاهرة، الجيزة</li>
+            <li class="mt-2"><i class="fas fa-envelope me-2"></i> <a href="mailto:info@cu.edu.eg">info@cu.edu.eg</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center copyright">
+        <p>&copy; 2024 كلية الدراسات العليا للبحوث الإحصائية. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
