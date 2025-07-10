@@ -174,6 +174,8 @@
       box-shadow: var(--box-shadow-sm);
       transition: var(--transition);
       border: 1px solid #e9ecef;
+      display: flex;
+      flex-direction: column;
     }
     .research-card:hover {
       transform: translateY(-8px);
@@ -187,20 +189,38 @@
       border-top-right-radius: var(--border-radius-lg);
     }
     .research-card-header h4 {
-      margin-bottom: 0.25rem;
-      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
       color: white;
     }
-    .research-card-header .year-badge {
+    .year-badge {
       font-size: 0.9rem;
       font-weight: 500;
       background-color: rgba(255, 255, 255, 0.2);
       padding: 0.3em 0.8em;
       border-radius: 50px;
     }
+    .degree-type-badge {
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 0.4em 0.9em;
+        border-radius: 50px;
+        margin-right: 0.5rem;
+    }
+    .degree-academic {
+        background-color: #17a2b8; /* Info color */
+        color: white;
+    }
+    .degree-professional {
+        background-color: #6f42c1; /* A shade of purple */
+        color: white;
+    }
 
     .research-card-body {
       padding: 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
     
     .research-card-body h5 {
@@ -225,7 +245,7 @@
     }
     
     .research-links {
-      margin-top: 1.5rem;
+      margin-top: auto;
       padding-top: 1.5rem;
       border-top: 1px solid #e9ecef;
       text-align: center;
@@ -233,7 +253,7 @@
     .research-links a {
       color: #6c757d;
       font-size: 1.8rem;
-      margin: 0 1rem;
+      margin: 0 0.75rem;
       transition: var(--transition);
       display: inline-block;
     }
@@ -322,7 +342,7 @@
   <header class="page-header">
     <div class="container">
       <h1>أبحاث الخريجين</h1>
-      <p> الأبحاث المنشورة لطلاب وخريجي  كلية الدراسات العليا للبحوث الإحصائية - جامعة القاهرة</p>
+      <p>استعراض الأبحاث والمشاريع المنشورة لطلاب وخريجي برامجنا المتميزة</p>
     </div>
   </header>
 
@@ -331,12 +351,15 @@
     <div class="container">
       <div class="row g-4 justify-content-center">
 
-        <!-- Research Card 1 -->
-        <div class="col-lg-6">
+        <!-- Research Card: Abeer Ali Saeed Amer -->
+        <div class="col-lg-6 col-md-12">
           <div class="research-card h-100">
             <div class="research-card-header">
               <h4>Predictive Model for Student’s Academic Performance Using Machine Learning Techniques</h4>
-              <span class="year-badge">يوليو 2024</span>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="year-badge">يوليو 2024</span>
+                <span class="badge degree-type-badge degree-professional">مهني</span>
+              </div>
             </div>
             <div class="research-card-body">
               <div class="row">
@@ -360,12 +383,15 @@
           </div>
         </div>
 
-        <!-- Research Card 2 -->
-        <div class="col-lg-6">
+        <!-- Research Card: Ahmed, Iman, Elsayed -->
+        <div class="col-lg-6 col-md-12">
           <div class="research-card h-100">
             <div class="research-card-header">
               <h4>The Future ERP Systems: Improve Employee Performance Evaluation Using Machine Learning</h4>
-              <span class="year-badge">أكتوبر 2024</span>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="year-badge">أكتوبر 2024</span>
+                <span class="badge degree-type-badge degree-professional">مهني</span>
+              </div>
             </div>
             <div class="research-card-body">
               <div class="row">
@@ -389,7 +415,143 @@
                 <a href="https://www.researchgate.net/profile/Ahmed-Youssri" target="_blank" title="Ahmed Youssri - ResearchGate"><i class="ai ai-researchgate-square"></i></a>
                 <a href="https://www.researchgate.net/profile/Iman-Mosallam" target="_blank" title="Iman Mosallam - ResearchGate"><i class="ai ai-researchgate-square"></i></a>
                 <a href="https://www.linkedin.com/in/elsayed-abdelbadea-0434442b/" target="_blank" title="Elsayed Abdelbadea - LinkedIn"><i class="fab fa-linkedin"></i></a>
-                 <a href="https://www.researchgate.net/profile/Elsayed-Abdelbadea" target="_blank" title="Elsayed Abdelbadea - ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+                <a href="https://www.researchgate.net/profile/Elsayed-Abdelbadea" target="_blank" title="Elsayed Abdelbadea - ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Research Card: HESHAM Alshaikh 1 -->
+        <div class="col-lg-6 col-md-12">
+          <div class="research-card h-100">
+            <div class="research-card-header">
+              <h4>Cracking the Crypto-Ransomware Attack Chain</h4>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="year-badge">ديسمبر 2023</span>
+                <span class="badge degree-type-badge degree-academic">أكاديمي</span>
+              </div>
+            </div>
+            <div class="research-card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>الطلاب الباحثون</h5>
+                  <ul class="author-list">
+                    <li><i class="fas fa-user-graduate"></i>HESHAM Alshaikh</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>المشرف</h5>
+                  <ul class="supervisor-list">
+                    <li><i class="fas fa-chalkboard-teacher"></i>Dr. Nagy Ramadan Darwish</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="research-links">
+                <a href="https://www.researchgate.net/publication/383166027_Cracking_the_Crypto-Ransomware_Attack_Chain" target="_blank" title="رابط البحث"><i class="fas fa-link"></i></a>
+                <a href="https://www.linkedin.com/in/hesham-alshaikh/" target="_blank" title="HESHAM Alshaikh - LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.researchgate.net/profile/Hesham-Alshaikh" target="_blank" title="HESHAM Alshaikh - ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Research Card: HESHAM Alshaikh 2 -->
+        <div class="col-lg-6 col-md-12">
+          <div class="research-card h-100">
+            <div class="research-card-header">
+              <h4>Crypto-Ransomware Detection and Prevention Technique and Tools: A survey</h4>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="year-badge">أكتوبر 2023</span>
+                <span class="badge degree-type-badge degree-academic">أكاديمي</span>
+              </div>
+            </div>
+            <div class="research-card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>الطلاب الباحثون</h5>
+                  <ul class="author-list">
+                    <li><i class="fas fa-user-graduate"></i>HESHAM Alshaikh</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>المشرف</h5>
+                  <ul class="supervisor-list">
+                    <li><i class="fas fa-chalkboard-teacher"></i>Dr. Nagy Ramadan Darwish</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="research-links">
+                <a href="https://pdfs.semanticscholar.org/88c1/b3dafddb7d8cdfdc06981b97c7d24fb9a37d.pdf" target="_blank" title="رابط البحث"><i class="fas fa-link"></i></a>
+                <a href="https://www.linkedin.com/in/hesham-alshaikh/" target="_blank" title="HESHAM Alshaikh - LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.researchgate.net/profile/Hesham-Alshaikh" target="_blank" title="HESHAM Alshaikh - ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Research Card: HESHAM Alshaikh 3 -->
+        <div class="col-lg-6 col-md-12">
+          <div class="research-card h-100">
+            <div class="research-card-header">
+              <h4>Ransomware Prevention and Mitigation Techniques</h4>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="year-badge">فبراير 2020</span>
+                <span class="badge degree-type-badge degree-academic">أكاديمي</span>
+              </div>
+            </div>
+            <div class="research-card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>الطلاب الباحثون</h5>
+                  <ul class="author-list">
+                    <li><i class="fas fa-user-graduate"></i>HESHAM Alshaikh</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>المشرف</h5>
+                  <ul class="supervisor-list">
+                    <li><i class="fas fa-chalkboard-teacher"></i>Dr. Nagy Ramadan Darwish</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="research-links">
+                <a href="https://www.ijcaonline.org/archives/volume177/number40/31171-31171-2020919899/" target="_blank" title="رابط البحث"><i class="fas fa-link"></i></a>
+                <a href="https://www.linkedin.com/in/hesham-alshaikh/" target="_blank" title="HESHAM Alshaikh - LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.researchgate.net/profile/Hesham-Alshaikh" target="_blank" title="HESHAM Alshaikh - ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research Card: HESHAM Alshaikh 4 -->
+        <div class="col-lg-6 col-md-12">
+          <div class="research-card h-100">
+            <div class="research-card-header">
+              <h4>Survey on Ransomware Prevention and Mitigation Techniques</h4>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="year-badge">ديسمبر 2019</span>
+                <span class="badge degree-type-badge degree-academic">أكاديمي</span>
+              </div>
+            </div>
+            <div class="research-card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>الطلاب الباحثون</h5>
+                  <ul class="author-list">
+                    <li><i class="fas fa-user-graduate"></i>HESHAM Alshaikh</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>المشرف</h5>
+                  <ul class="supervisor-list">
+                    <li><i class="fas fa-chalkboard-teacher"></i>Dr. Nagy Ramadan Darwish</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="research-links">
+                <a href="https://www.researchgate.net/publication/339390041_Survey_on_Ransomware_Prevention_and_Mitigation_Techniques" target="_blank" title="رابط البحث"><i class="fas fa-link"></i></a>
+                <a href="https://www.linkedin.com/in/hesham-alshaikh/" target="_blank" title="HESHAM Alshaikh - LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.researchgate.net/profile/Hesham-Alshaikh" target="_blank" title="HESHAM Alshaikh - ResearchGate"><i class="ai ai-researchgate-square"></i></a>
               </div>
             </div>
           </div>
